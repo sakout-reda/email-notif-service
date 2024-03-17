@@ -1,3 +1,5 @@
+server:
+  port: 8081
 spring:
   mail:
     host: smtp.gmail.com
@@ -10,3 +12,9 @@ spring:
           starttls:
             enable: true
           auth: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/realm-api
+          jwk-set-uri: http://localhost:8080/realms/realm-api/protocol/openid-connect/certs
